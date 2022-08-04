@@ -1,0 +1,9 @@
+{% extends "blogs/base.html" %}
+{% block content %}
+    <p>Add a new post:</p>
+        <form action="{% url 'blogs:new_post' %}" method='post'>
+            {% csrf_token %} <!-- to prevent the attacker to gain unauthorized access to the serer -->
+            {{ form.as_p }} <!-- to create field nessersery to display the form automaticlly -->
+            <button name="submit">Add post</button>
+        </form>
+{% endblock content %}
