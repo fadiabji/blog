@@ -7,6 +7,7 @@
             <li>
                 <p>{{post}}</p>
                 <p>{{post.text}}</p>
+                <p>By {{post.author}}</p>
                 <p><a href="{% url 'blogs:edit_post' post.id %}">Edit post</a></p>
             </li>
         {% empty %}
