@@ -1,9 +1,16 @@
 {% extends "blogs/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+<h2>Add a new post:</h2>
+{% endblock page_header %}
+
 {% block content %}
-    <p>Add a new post:</p>
-        <form action="{% url 'blogs:new_post' %}" method='post'>
-            {% csrf_token %} <!-- to prevent the attacker to gain unauthorized access to the serer -->
-            {{ form.as_p }} <!-- to create field nessersery to display the form automaticlly -->
-            <button name="submit">Add post</button>
-        </form>
+<form action="{% url 'blogs:new_post' %}" method='post' class="form">
+    {% csrf_token %} <!-- to prevent the attacker to gain unauthorized access to the serer -->
+    {% bootstrap_form form %}
+    {% buttons %} 
+    <button name="submit" class="btn btn-primary">Add post</button>
+    {% endbuttons %}
+</form>
 {% endblock content %}

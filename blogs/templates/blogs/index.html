@@ -1,7 +1,11 @@
 {% extends "blogs/base.html" %}
+{% load bootstrap4 %}
 
-{% block content %}
-    <p>Learning Log helps you keep track of your blogs, for any post you're posting in the bolg.</p>
-{% endblock content %}
+{% block page_header %}
+<h1 class="display-4">Track your blogs.!</h1>
+<div class="jumbotron">
+    <p class="lead">Make your own Blogs, and keep a list of the posts you're publishing. Whenever you post something new about something, make an new post summarizing what you've publishing.</p>
 
-
+  <a class="btn btn-primary btn-lg" href="{% url 'users:register' %}" role="button">register &raquo;</a>
+</div>
+{% endblock page_header %}
