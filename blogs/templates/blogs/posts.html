@@ -11,7 +11,7 @@
         <h4 class="card-header">
             {{post}}<small><a href="{% url 'blogs:edit_post' post.id %}"> Edit post</a></small></h4>
             <div class="card-body">
-                <small>{{ post.date_added|date:'M d, Y H:i' }}</small>
+                <small>added: {{ post.date_added|date:'M d, Y H:i' }}</small>
                 <p>{{post.text}}</p>
                 <p class="text-info">By {{post.author}}</p>
             </div>
